@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    {% block content %}
+        <h1>Pagina Inicio </h1>
+        {% if user.is_authenticated %}
+            <a href="{% url 'logout' %}">logout</a>
+        {% else%}
+        <a href="{% url 'login_url' %}">login</a>
+        <a href="{% url 'register_url' %}">register</a>
+
+        {% endif %}
+    {% endblock %}
+
+</body>
+</html>
